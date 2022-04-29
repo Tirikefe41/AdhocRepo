@@ -1,0 +1,6 @@
+.env.development
+schema.ts
+schema.js
+/node_modules
+/build
+/logs

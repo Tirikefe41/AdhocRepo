@@ -75,23 +75,24 @@ export class snipeBot{
                 },
                 signer: _wallet
                 }
-            ], blockNumber + 1
-            
+            ], blockNumber + 1            
             )
 
-            if ('error' in bundleSubmitResponse) {
-            console.warn(bundleSubmitResponse.error.message)
-            return
-            }
             let mintStatus = await bundleSubmitResponse.wait()
             console.log(`Mint status: ${mintStatus}`)
+
+            if ('error' in bundleSubmitResponse) {
+            // console.warn(bundleSubmitResponse.error.message)
+            return {status: `Error ${mintStatus}: bundleSubmitResponse.error.message)`}
+            }          
 
             if (!mintStatus){
                 receipt = await bundleSubmitResponse.receipts()
                 if (receipt){
-                    console.log('Mint successful...')
+                    // console.log('Mint successful...')
                     // process.exit(0)  
-                    _provider.off('block')                  
+                    _provider.off('block') 
+                    return {status:`${receipt}: mint successful...`}                 
                 }
             }
         })

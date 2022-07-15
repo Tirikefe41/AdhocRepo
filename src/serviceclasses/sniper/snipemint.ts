@@ -83,7 +83,7 @@ export class snipeBot{
 
             if ('error' in bundleSubmitResponse) {
             // console.warn(bundleSubmitResponse.error.message)
-            return {status: `Error ${mintStatus}: bundleSubmitResponse.error.message)`}
+            return {status: `Error ${mintStatus}: ${bundleSubmitResponse.error.message}`}
             }          
 
             if (!mintStatus){

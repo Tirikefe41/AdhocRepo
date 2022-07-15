@@ -14,5 +14,5 @@ export class StatusConstants{
         "rinkeby": "https://api.etherscan.io/api?module=contract&action=getabi&address="
     }
 
-    public static FLASHBOTS_ENDPOINT = "https://relay-goerli.flashbots.net"
+    public static FLASHBOTS_ENDPOINT = "https://relay.flashbots.net"
 }
